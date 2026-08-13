@@ -1,3 +1,4 @@
+import { emit } from "node:cluster";
 import { EventEmitter } from "node:events";
 
 function myFunction() {
@@ -34,3 +35,20 @@ button.dispatchEvent({
     eventType: "save",
     detail: "This is save dispatched"
 });
+function createDomElements()
+{
+    const emitter = new EventEmitter();
+    return {
+        addEventListener(eventType, listener) {
+            emitter.on(eventType, listener);
+        },
+        removeEventListener(eventType, listener) {
+            emitter.off(eventType, listener);
+        },
+        dispatchEvent(event) {
+            event.target = this;
+            event.currentTarget = this;
+            emitter.emit(event.eventType, event);
+        }
+    };
+}
