@@ -23,6 +23,17 @@ function myFunction() {
 
 // Create button
 const button = myFunction();
+const button = createDomElement();
+
+button.addEventListener("submit", (event) => {
+    console.log("Submit event fired!");
+    console.log(event.detail);
+});
+
+button.dispatchEvent({
+    eventType: "submit",
+    detail: "Button submitted"
+});
 
 // Add event listener
 button.addEventListener("save", (event) => {
