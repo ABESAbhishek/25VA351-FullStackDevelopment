@@ -1,18 +1,21 @@
-import fs from node.js;
-function createFile(content) 
-{
-    fs.writeFile(filename, content)
-    console.log('File created successfully');
-}
-const filepath="userdata.txt";
 import fs from "node:fs";
-async function createFile(content) {
-    await fs.promises.writeFile("filepath", content);
-    console.log("File created successfully");
-}
-async function readFile() {
-    const data = await fs.promises.readFile("filepath", "utf-8");
-    console.log(data);
- }
+const filepath = "userdata.txt";
 
-    
+async function createfile(content) {
+    try {
+        await fs.promises.writeFile(filepath, content);
+        console.log("File created");
+    } catch (error) {
+        console.log("Error creating file");
+    }
+}
+async function readfile() {
+    try {
+        const data = await fs.promises.readFile(filepath, "utf8");
+        console.log(data);
+    } catch (error) {
+        console.log("Error reading file");
+    }
+}
+await createfile("Hello World");
+await readfile();
