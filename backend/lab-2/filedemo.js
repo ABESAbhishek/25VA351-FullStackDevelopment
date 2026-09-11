@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import fs, { appendFile } from "node:fs";
 const filepath = "userdata.txt";
 
 async function createfile(content) {
@@ -19,3 +19,19 @@ async function readfile() {
 }
 await createfile("Hello World");
 await readfile();
+appendFile(filepath, "\nHello World", (err) => {
+    if (err) {
+        console.log("Error appending to file");
+    } else {
+        console.log("Data appended to file");
+    }
+});
+function deletefile() {
+    fs.unlink(filepath, (err) => {
+        if (err) {
+            console.log("Error deleting file");
+        } else {
+            console.log("File deleted");
+        }
+    });
+}
