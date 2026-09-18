@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  padding: 30px 50px;
+  background: #111;
+  color: white;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #aaa;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+}
+
+section h2 {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.request-bar {
+  display: flex;
+  gap: 12px;
+}
+
+.request-bar select {
+  width: 120px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+}
+
+.request-bar input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.request-bar button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.request-bar button:hover {
+  background: #333;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #e8f7e8;
+  color: #247a24;
+  font-size: 14px;
+}
+
+.response-box {
+  background: #111;
+  color: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.response-box pre {
+  font-family: monospace;
+  line-height: 1.6;
+}
